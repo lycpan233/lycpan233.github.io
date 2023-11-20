@@ -2,7 +2,7 @@
 
 # 确保脚本抛出遇到的错误
 set -e
-
+echo 'lycpan233.top' > CNAME
 
 push_addr=`git@github.com:lycpan233/lycpan233.github.io.git` # git提交地址，也可以手动设置，比如：push_addr=git@github.com:xugaoyi/vuepress-theme-vdoing.git
 commit_info=`git describe --all --always --long`
