@@ -4,8 +4,6 @@
 import dayjs from 'dayjs';
 import { VdoingThemeConfig } from 'vuepress-theme-vdoing/types';
 import { defineConfig4CustomTheme, UserPlugins } from 'vuepress/config';
-import baiduCode from './config/baiduCode'; // 百度统计hm码
-import htmlModules from './config/htmlModules'; // 自定义插入的html块
 
 const DOMAIN_NAME = 'lycpan233.top' // 域名 (不带https)
 const WEB_SITE = `https://${DOMAIN_NAME}` // 网址
@@ -118,15 +116,15 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 文章默认的作者信息，(可在md文件中单独配置此信息) string | {name: string, link?: string}
     author: {
-      name: 'lycpan233', // 必需
+      name: '流羽', // 必需
       link: 'https://github.com/lycpan233', // 可选的
     },
 
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-      avatar: 'https://jsd.cdn.zzko.cn/gh/xugaoyi/image_store/blog/20200103123203.jpg',
-      name: 'Evan Xu',
-      slogan: '前端界的小学生',
+      avatar: 'https://github.com/lycpan233/img/blob/main/lvdui.jpeg?raw=true',
+      name: '流羽',
+      slogan: '白日梦想家',
     },
 
     // 社交图标 (显示于博主信息栏和页脚栏。内置图标：https://doc.xugaoyi.com/pages/a20ce8/#social)
@@ -136,38 +134,33 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         {
           iconClass: 'icon-youjian',
           title: '发邮件',
-          link: 'mailto:894072666@qq.com',
+          link: 'mailto:lycpan@foxmail.com',
         },
         {
           iconClass: 'icon-github',
           title: 'GitHub',
-          link: 'https://github.com/xugaoyi',
-        },
-        {
-          iconClass: 'icon-erji',
-          title: '听音乐',
-          link: 'https://music.163.com/#/playlist?id=755597173',
+          link: 'https://github.com/lycpan233',
         },
       ],
     },
 
     // 页脚信息
     footer: {
-      createYear: 2019, // 博客创建年份
+      createYear: 2023, // 博客创建年份
       copyrightInfo:
-        'Evan Xu | <a href="https://github.com/xugaoyi/vuepress-theme-vdoing/blob/master/LICENSE" target="_blank">MIT License</a>', // 博客版权信息、备案信息等，支持a标签或换行标签</br>
+        'Dreamer | <a href="https://github.com/xugaoyi/vuepress-theme-vdoing/blob/master/LICENSE" target="_blank">MIT License</a>', // 博客版权信息、备案信息等，支持a标签或换行标签</br>
     },
 
     // 扩展自动生成frontmatter。（当md文件的frontmatter不存在相应的字段时将自动添加。不会覆盖已有的数据。）
     extendFrontmatter: {
       author: {
-        name: 'xugaoyi',
-        link: 'https://github.com/xugaoyi'
+        name: '流羽',
+        link: 'https://github.com/lycpan233'
       }
     },
 
     // 自定义hmtl(广告)模块
-    htmlModules
+    // htmlModules
   },
 
   // 注入到页面<head>中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
@@ -202,14 +195,14 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       },
     ],
 
-    'vuepress-plugin-baidu-autopush', // 百度自动推送
+    // 'vuepress-plugin-baidu-autopush', // 百度自动推送
 
-    [
-      'vuepress-plugin-baidu-tongji', // 百度统计
-      {
-        hm: baiduCode,
-      },
-    ],
+    // [
+    //   'vuepress-plugin-baidu-tongji', // 百度统计
+    //   {
+    //     hm: baiduCode,
+    //   },
+    // ],
 
     // 全文搜索。 ⚠️注意：此插件会在打开网站时多加载部分js文件用于搜索，导致初次访问网站变慢。如在意初次访问速度的话可以不使用此插件！（推荐：vuepress-plugin-thirdparty-search）
     // 'fulltext-search',
@@ -219,19 +212,19 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       'thirdparty-search',
       {
         thirdparty: [
-          {
-            title: '在MDN中搜索',
-            frontUrl: 'https://developer.mozilla.org/zh-CN/search?q=', // 搜索链接的前面部分
-            behindUrl: '', // 搜索链接的后面部分，可选，默认 ''
-          },
-          {
-            title: '在Runoob中搜索',
-            frontUrl: 'https://www.runoob.com/?s=',
-          },
-          {
-            title: '在Vue API中搜索',
-            frontUrl: 'https://cn.vuejs.org/v2/api/#',
-          },
+          // {
+          //   title: '在MDN中搜索',
+          //   frontUrl: 'https://developer.mozilla.org/zh-CN/search?q=', // 搜索链接的前面部分
+          //   behindUrl: '', // 搜索链接的后面部分，可选，默认 ''
+          // },
+          // {
+          //   title: '在Runoob中搜索',
+          //   frontUrl: 'https://www.runoob.com/?s=',
+          // },
+          // {
+          //   title: '在Vue API中搜索',
+          //   frontUrl: 'https://cn.vuejs.org/v2/api/#',
+          // },
           {
             title: '在Bing中搜索',
             frontUrl: 'https://cn.bing.com/search?q=',
@@ -254,19 +247,19 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       },
     ],
 
-    [
-      'demo-block', // demo演示模块 https://github.com/xiguaxigua/vuepress-plugin-demo-block
-      {
-        settings: {
-          // jsLib: ['http://xxx'], // 在线示例(jsfiddle, codepen)中的js依赖
-          // cssLib: ['http://xxx'], // 在线示例中的css依赖
-          // vue: 'https://jsd.cdn.zzko.cn/npm/vue/dist/vue.min.js', // 在线示例中的vue依赖
-          jsfiddle: false, // 是否显示 jsfiddle 链接
-          codepen: true, // 是否显示 codepen 链接
-          horizontal: false, // 是否展示为横向样式
-        },
-      },
-    ],
+    // [
+    //   'demo-block', // demo演示模块 https://github.com/xiguaxigua/vuepress-plugin-demo-block
+    //   {
+    //     settings: {
+    //       // jsLib: ['http://xxx'], // 在线示例(jsfiddle, codepen)中的js依赖
+    //       // cssLib: ['http://xxx'], // 在线示例中的css依赖
+    //       // vue: 'https://jsd.cdn.zzko.cn/npm/vue/dist/vue.min.js', // 在线示例中的vue依赖
+    //       jsfiddle: false, // 是否显示 jsfiddle 链接
+    //       codepen: true, // 是否显示 codepen 链接
+    //       horizontal: false, // 是否展示为横向样式
+    //     },
+    //   },
+    // ],
     [
       'vuepress-plugin-zooming', // 放大图片
       {
@@ -281,11 +274,11 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       {
         choosen: 'gitalk',
         options: {
-          clientID: 'a6e1355287947096b88b',
-          clientSecret: 'f0e77d070fabfcd5af95bebb82b2d574d7248d71',
+          clientID: '739331903f7a29976ee5',
+          clientSecret: '81d03bda0e5f5b1638352e70b14a595658ab5b2f',
           repo: 'blog-gitalk-comment', // GitHub 仓库
-          owner: 'xugaoyi', // GitHub仓库所有者
-          admin: ['xugaoyi'], // 对仓库有写权限的人
+          owner: 'lycpan233', // GitHub仓库所有者
+          admin: ['lycpan233'], // 对仓库有写权限的人
           // distractionFreeMode: true,
           pagerDirection: 'last', // 'first'正序 | 'last'倒序
           id: '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50
