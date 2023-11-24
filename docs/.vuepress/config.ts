@@ -83,7 +83,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-      avatar: 'https://github.com/lycpan233/img/blob/main/lvdui.jpeg?raw=true',
+      avatar: '/img/avatar.jpeg',
       name: '流羽',
       slogan: '白日梦想家',
     },
