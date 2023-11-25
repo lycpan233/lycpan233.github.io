@@ -77,14 +77,14 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 文章默认的作者信息，(可在md文件中单独配置此信息) string | {name: string, link?: string}
     author: {
-      name: '流羽', // 必需
+      name: 'lycpan233', // 必需
       link: 'https://github.com/lycpan233', // 可选的
     },
 
     // 博主信息 (显示在首页侧边栏)
     blogger: {
       avatar: '/img/avatar.jpeg',
-      name: '流羽',
+      name: 'lycpan233',
       slogan: '白日梦想家',
     },
 
@@ -115,7 +115,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // 扩展自动生成frontmatter。（当md文件的frontmatter不存在相应的字段时将自动添加。不会覆盖已有的数据。）
     extendFrontmatter: {
       author: {
-        name: '流羽',
+        name: 'lycpan233',
         link: 'https://github.com/lycpan233'
       },
     },
@@ -131,11 +131,11 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       'meta',
       {
         name: 'keywords',
-        content: '个人技术博客,技术文档,学习,lycpan233',
+        content: 'dreamer,个人技术博客,技术文档,学习,lycpan233',
       },
     ],
     ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
-    // ['meta', { name: 'baidu-site-verification', content: '7F55weZDDc' }], // 百度统计的站长验证（你可以去掉）
+    ['meta', { name: 'baidu-site-verification', content: 'codeva-y1NOuDx2rY' }], // 百度统计的站长验证（你可以去掉）
     // [
     //   'script',
     //   {
@@ -156,7 +156,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       },
     ],
 
-    // 'vuepress-plugin-baidu-autopush', // 百度自动推送
+    'vuepress-plugin-baidu-autopush', // 百度自动推送
 
     // [
     //   'vuepress-plugin-baidu-tongji', // 百度统计
