@@ -136,6 +136,17 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     ],
     ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
     ['meta', { name: 'baidu-site-verification', content: 'codeva-y1NOuDx2rY' }], // 百度统计的站长验证（你可以去掉）
+    [
+      'script', {}, `
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?9411ad90e999860bd29f69ea88f72c7a";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      `
+    ]
     // [
     //   'script',
     //   {
