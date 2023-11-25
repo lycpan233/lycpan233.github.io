@@ -117,7 +117,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       author: {
         name: '流羽',
         link: 'https://github.com/lycpan233'
-      }
+      },
     },
 
     // 自定义hmtl(广告)模块
