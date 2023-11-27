@@ -9,14 +9,14 @@ bannerBg: /img/bg-2.png
 # bannerBg: auto # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
 
 features: # 可选的
-  - title: 前端
-    details: 可以将你的梦呈现给我吗？织梦者
-    link: /front-end/ # 可选
-    imgUrl: /img/front-end.png # 可选
   - title: 大杂烩
     details: 萝卜白菜皆我所爱，不求甚解
     link: /mix/
     imgUrl: /img/mix.png
+  - title: 前端
+    details: 可以将你的梦呈现给我吗？织梦者
+    link: /front-end/ # 可选
+    imgUrl: /img/front-end.png # 可选
   - title: 后端
     details: 上帝也会写BUG吗？
     link: /back-end/
