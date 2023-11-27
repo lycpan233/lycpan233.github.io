@@ -103,8 +103,13 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       icons: [
         {
           iconClass: 'icon-youjian',
-          title: '发邮件',
+          title: '漂流瓶联系',
           link: 'mailto:lycpan@foxmail.com',
+        },
+        {
+          iconClass: 'icon-QQ',
+          title: '滴滴我',
+          link: 'tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=455025655',
         },
         {
           iconClass: 'icon-github',
