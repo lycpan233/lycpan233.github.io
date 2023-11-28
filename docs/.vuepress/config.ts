@@ -149,7 +149,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       },
     ],
     ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
-    ['meta', { name: 'baidu-site-verification', content: 'codeva-y1NOuDx2rY' }], // 百度统计的站长验证（你可以去掉）
+    ['meta', { name: 'baidu-site-verification', content: 'codeva-y1NOuDx2rY' }], // 百度统计的站长验证
+    ['meta', { name: 'msvalidate.01', content: '355204FB706B56B152D9472961637DC6' }], // 必应
     [
       'script', {}, `
       var _hmt = _hmt || [];
