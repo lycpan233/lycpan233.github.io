@@ -245,6 +245,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         },
       },
     ],
+    'ribbon', // 背景缎带
+    'cursor-effects' // 鼠标点击效果
     // [
     //   resolve(__dirname, './plugins/love-me'), { // 鼠标点击爱心特效
     //     color: '#11a8cd', // 爱心颜色，默认随机色
