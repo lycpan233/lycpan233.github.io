@@ -189,7 +189,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         thirdparty: [
           {
             title: '在Bing中搜索本站的',
-            frontUrl: 'https://cn.bing.com/search?q=site%3A${DOMAIN_NAME}%20',
+            frontUrl: `https://cn.bing.com/search?q=site%3A${DOMAIN_NAME}%20`,
           },
           {
             title: '通过百度搜索本站的',
