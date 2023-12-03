@@ -245,6 +245,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         },
       },
     ],
+    'go-top', // 猫抓
     'ribbon', // 背景缎带
     'cursor-effects' // 鼠标点击效果
     // [
