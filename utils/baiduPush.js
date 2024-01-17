@@ -44,4 +44,5 @@ function main() {
     const info = articles[i];
     fs.appendFileSync(urlsRoot, info.link);
   }
+  fs.appendFileSync(urlsRoot, DOMAIN);
 }
