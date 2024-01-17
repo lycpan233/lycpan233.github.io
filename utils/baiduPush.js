@@ -8,7 +8,7 @@ const matter = require('gray-matter'); // FrontMatter解析器 https://github.co
 const readFileList = require('./modules/readFileList');
 const urlsRoot = path.join(__dirname, '..', 'urls.txt'); // 百度链接推送文件
 const DOMAIN = process.argv.splice(2)[0]; // 获取命令行传入的参数
-const limit = 10; // 每日推送限制
+const limit = 999; // 每日推送限制
 
 if (DOMAIN) {
   main();
@@ -40,7 +40,7 @@ function main() {
 
   // 仅取指定条数的推送
   fs.writeFileSync(urlsRoot, '')
-  for (let i = 0; i < Math.min(articles.length,limit); i++) {
+  for (let i = 0; i < Math.min(articles.length, limit); i++) {
     const info = articles[i];
     fs.appendFileSync(urlsRoot, info.link);
   }
