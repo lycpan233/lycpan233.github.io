@@ -59,20 +59,9 @@ function bingPush() {
   files.pop(); // 去除最后一个空行
   console.log(files);
 
-  // 定义请求地址，参数
-  const apiKey = "a9f6edce90b547e48c7d42876d07a594";
-  const url = `https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlbatch?apikey=${apiKey}`;
   const params = {
     siteUrl: DOMAIN,
     urlList: files,
   };
-
-  axios
-    .post(url, params)
-    .then(({ data }) => {
-      console.log("bingPush resp:", data);
-    })
-    .catch((err) => {
-      console.log("bingPush err", err.response.data);
-    });
+  fs.writeFileSync("params.json", JSON.stringify(params));
 }
