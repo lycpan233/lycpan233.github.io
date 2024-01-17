@@ -1,6 +1,6 @@
 {
   "name": "dreamer",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "scripts": {
     "dev": "node --max_old_space_size=4096 ./node_modules/vuepress/cli.js dev docs",
     "build": "export NODE_OPTIONS=--openssl-legacy-provider && node --max_old_space_size=4096 ./node_modules/vuepress/cli.js build docs",
@@ -20,11 +20,12 @@
     "vuepress": "1.9.9",
     "vuepress-plugin-comment": "^0.7.3",
     "vuepress-plugin-cursor-effects": "^1.1.6",
+    "vuepress-plugin-flexsearch-pro": "^1.0.3",
     "vuepress-plugin-go-top": "^1.0.4",
     "vuepress-plugin-one-click-copy": "^1.0.2",
     "vuepress-plugin-ribbon": "^1.1.6",
+    "vuepress-plugin-search-pro": "2.0.0-rc.11",
     "vuepress-plugin-sitemap": "^2.3.1",
-    "vuepress-plugin-thirdparty-search": "^1.0.2",
     "vuepress-plugin-zooming": "^1.1.7",
     "vuepress-theme-vdoing": "^1.12.9",
     "yamljs": "^0.3.0"

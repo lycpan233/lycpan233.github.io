@@ -1,23 +1,24 @@
 /**
  * 提示：如您想使用JS版本的配置文件可参考：https://github.com/xugaoyi/vuepress-theme-vdoing/tree/a2f03e993dd2f2a3afdc57cf72adfc6f1b6b0c32/docs/.vuepress
  */
-import dayjs from 'dayjs';
-import { VdoingThemeConfig } from 'vuepress-theme-vdoing/types';
-import { defineConfig4CustomTheme, UserPlugins } from 'vuepress/config';
+import dayjs from "dayjs";
+import { VdoingThemeConfig } from "vuepress-theme-vdoing/types";
+import { defineConfig4CustomTheme, UserPlugins } from "vuepress/config";
 
-const DOMAIN_NAME = 'lycpan233.top' // 域名 (不带https)
-const WEB_SITE = `https://${DOMAIN_NAME}` // 网址
+const DOMAIN_NAME = "lycpan233.top"; // 域名 (不带https)
+const WEB_SITE = `https://${DOMAIN_NAME}`; // 网址
 
 export default defineConfig4CustomTheme<VdoingThemeConfig>({
-  theme: 'vdoing', // 使用npm主题包
+  theme: "vdoing", // 使用npm主题包
   // theme: resolve(__dirname, '../../vdoing'), // 使用本地主题包
 
   locales: {
-    '/': {
-      lang: 'zh-CN',
+    "/": {
+      lang: "zh-CN",
       title: "Dreamer",
-      description: '白日梦想家，最大的梦想就是当场退休！如果你也和我一样，不如一起逐梦？',
-    }
+      description:
+        "白日梦想家，最大的梦想就是当场退休！如果你也和我一样，不如一起逐梦？",
+    },
   },
   // base: '/', // 默认'/'。如果你想将你的网站部署到如 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
 
@@ -25,27 +26,27 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   themeConfig: {
     // 导航配置
     nav: [
-      { text: '首页', link: '/' },
+      { text: "首页", link: "/" },
       {
-        text: '索引',
-        link: '/archives/',
+        text: "索引",
+        link: "/archives/",
         items: [
-          { text: '分类', link: '/categories/' },
-          { text: '标签', link: '/tags/' },
-          { text: '归档', link: '/archives/' },
+          { text: "分类", link: "/categories/" },
+          { text: "标签", link: "/tags/" },
+          { text: "归档", link: "/archives/" },
         ],
       },
-      { text: '关于', link: '/about/' },
+      { text: "关于", link: "/about/" },
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
-    logo: '/img/logo.jpeg', // 导航栏logo
-    repo: 'lycpan233/lycpan233.github.io', // 导航栏右侧生成Github链接
+    logo: "/img/logo.jpeg", // 导航栏logo
+    repo: "lycpan233/lycpan233.github.io", // 导航栏右侧生成Github链接
     searchMaxSuggestions: 10, // 搜索结果显示最大数
-    lastUpdated: '上次更新', // 开启更新时间，并配置前缀文字   string | boolean (取值为git提交时间)
-    docsDir: 'docs', // 编辑的文件夹
+    lastUpdated: "上次更新", // 开启更新时间，并配置前缀文字   string | boolean (取值为git提交时间)
+    docsDir: "docs", // 编辑的文件夹
     // docsBranch: 'master', // 编辑的文件所在分支，默认master。 注意：如果你的分支是main则修改为main
     editLinks: true, // 启用编辑
-    editLinkText: '编辑',
+    editLinkText: "编辑",
 
     //*** 以下是Vdoing主题相关配置，文档：https://doc.xugaoyi.com/pages/a20ce8/ ***//
 
@@ -82,19 +83,19 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // defaultMode: 'auto',
 
     // 侧边栏  'structuring' | { mode: 'structuring', collapsable: Boolean} | 'auto' | <自定义>    温馨提示：目录页数据依赖于结构化的侧边栏数据，如果你不设置为'structuring',将无法使用目录页
-    sidebar: 'structuring',
+    sidebar: "structuring",
 
     // 文章默认的作者信息，(可在md文件中单独配置此信息) string | {name: string, link?: string}
     author: {
-      name: 'lycpan233', // 必需
-      link: 'https://github.com/lycpan233', // 可选的
+      name: "lycpan233", // 必需
+      link: "https://github.com/lycpan233", // 可选的
     },
 
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-      avatar: '/img/avatar.jpeg',
-      name: 'lycpan233',
-      slogan: '白日梦想家',
+      avatar: "/img/avatar.jpeg",
+      name: "lycpan233",
+      slogan: "白日梦想家",
     },
 
     // 社交图标 (显示于博主信息栏和页脚栏。内置图标：https://doc.xugaoyi.com/pages/a20ce8/#social)
@@ -102,19 +103,19 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       // iconfontCssFile: '//at.alicdn.com/t/xxx.css', // 可选，阿里图标库在线css文件地址，对于主题没有的图标可自己添加。阿里图片库：https://www.iconfont.cn/
       icons: [
         {
-          iconClass: 'icon-youjian',
-          title: '漂流瓶联系',
-          link: 'mailto:lycpan@foxmail.com',
+          iconClass: "icon-youjian",
+          title: "漂流瓶联系",
+          link: "mailto:lycpan@foxmail.com",
         },
         {
-          iconClass: 'icon-QQ',
-          title: '滴滴我',
-          link: 'tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=455025655',
+          iconClass: "icon-QQ",
+          title: "滴滴我",
+          link: "tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=455025655",
         },
         {
-          iconClass: 'icon-github',
-          title: 'GitHub',
-          link: 'https://github.com/lycpan233',
+          iconClass: "icon-github",
+          title: "GitHub",
+          link: "https://github.com/lycpan233",
         },
       ],
     },
@@ -129,8 +130,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // 扩展自动生成frontmatter。（当md文件的frontmatter不存在相应的字段时将自动添加。不会覆盖已有的数据。）
     extendFrontmatter: {
       author: {
-        name: 'lycpan233',
-        link: 'https://github.com/lycpan233'
+        name: "lycpan233",
+        link: "https://github.com/lycpan233",
       },
     },
 
@@ -140,19 +141,25 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
   // 注入到页面<head>中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
   head: [
-    ['link', { rel: 'icon', href: '/img/favicon.ico' }], //favicons，资源放在public文件夹
+    ["link", { rel: "icon", href: "/img/favicon.ico" }], //favicons，资源放在public文件夹
     [
-      'meta',
+      "meta",
       {
-        name: 'keywords',
-        content: 'dreamer,个人技术博客,技术文档,学习,lycpan233',
+        name: "keywords",
+        content: "dreamer,个人技术博客,技术文档,学习,lycpan233",
       },
     ],
-    ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
-    ['meta', { name: 'baidu-site-verification', content: 'codeva-y1NOuDx2rY' }], // 百度统计的站长验证
-    ['meta', { name: 'msvalidate.01', content: '355204FB706B56B152D9472961637DC6' }], // 必应的站长验证
-    [ // 百度站点统计
-      'script', {}, `
+    ["meta", { name: "theme-color", content: "#11a8cd" }], // 移动浏览器主题颜色
+    ["meta", { name: "baidu-site-verification", content: "codeva-y1NOuDx2rY" }], // 百度统计的站长验证
+    [
+      "meta",
+      { name: "msvalidate.01", content: "355204FB706B56B152D9472961637DC6" },
+    ], // 必应的站长验证
+    [
+      // 百度站点统计
+      "script",
+      {},
+      `
       var _hmt = _hmt || [];
       (function() {
         var hm = document.createElement("script");
@@ -160,8 +167,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         var s = document.getElementsByTagName("script")[0]; 
         s.parentNode.insertBefore(hm, s);
       })();
-      `
-    ]
+      `,
+    ],
     // [
     //   'script',
     //   {
@@ -172,7 +179,6 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // ], // 网站关联Google AdSense 与 html格式广告支持（你可以去掉）
   ],
 
-
   // 插件配置
   plugins: <UserPlugins>[
     [
@@ -181,73 +187,59 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         hostname: WEB_SITE,
       },
     ],
-
-    // 可以添加第三方搜索链接的搜索框（继承原官方搜索框的配置参数）
     [
-      'thirdparty-search',
+      "one-click-copy", // 代码块复制按钮
       {
-        thirdparty: [
-          {
-            title: '在Bing中搜索本站的',
-            frontUrl: `https://cn.bing.com/search?q=site%3A${DOMAIN_NAME}%20`,
-          },
-          {
-            title: '通过百度搜索本站的',
-            frontUrl: `https://www.baidu.com/s?wd=site%3A${DOMAIN_NAME}%20`,
-          },
-        ],
-      }
-    ],
-
-    [
-      'one-click-copy', // 代码块复制按钮
-      {
-        copySelector: ['div[class*="language-"] pre', 'div[class*="aside-code"] aside'], // String or Array
-        copyMessage: '复制成功', // default is 'Copy successfully and then paste it for use.'
+        copySelector: [
+          'div[class*="language-"] pre',
+          'div[class*="aside-code"] aside',
+        ], // String or Array
+        copyMessage: "复制成功", // default is 'Copy successfully and then paste it for use.'
         duration: 1000, // prompt message display time.
         showInMobile: false, // whether to display on the mobile side, default: false.
       },
     ],
     [
-      'vuepress-plugin-zooming', // 放大图片
+      "vuepress-plugin-zooming", // 放大图片
       {
-        selector: '.theme-vdoing-content img:not(.no-zoom)', // 排除class是no-zoom的图片
+        selector: ".theme-vdoing-content img:not(.no-zoom)", // 排除class是no-zoom的图片
         options: {
-          bgColor: 'rgba(0,0,0,0.6)',
+          bgColor: "rgba(0,0,0,0.6)",
         },
       },
     ],
     [
-      'vuepress-plugin-comment', // 评论
+      "vuepress-plugin-comment", // 评论
       {
-        choosen: 'gitalk',
+        choosen: "gitalk",
         options: {
-          clientID: '739331903f7a29976ee5',
-          clientSecret: '81d03bda0e5f5b1638352e70b14a595658ab5b2f',
-          repo: 'blog-gitalk-comment', // GitHub 仓库
-          owner: 'lycpan233', // GitHub仓库所有者
-          admin: ['lycpan233'], // 对仓库有写权限的人
+          clientID: "739331903f7a29976ee5",
+          clientSecret: "81d03bda0e5f5b1638352e70b14a595658ab5b2f",
+          repo: "blog-gitalk-comment", // GitHub 仓库
+          owner: "lycpan233", // GitHub仓库所有者
+          admin: ["lycpan233"], // 对仓库有写权限的人
           // distractionFreeMode: true,
-          pagerDirection: 'last', // 'first'正序 | 'last'倒序
-          id: '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50
-          title: '「评论」<%- frontmatter.title %>', // GitHub issue 的标题
-          labels: ['Gitalk', 'Comment'], // GitHub issue 的标签
-          body:
-            '页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>', // GitHub issue 的内容
+          pagerDirection: "last", // 'first'正序 | 'last'倒序
+          id: "<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>", //  页面的唯一标识,长度不能超过50
+          title: "「评论」<%- frontmatter.title %>", // GitHub issue 的标题
+          labels: ["Gitalk", "Comment"], // GitHub issue 的标签
+          body: "页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>", // GitHub issue 的内容
         },
       },
     ],
     [
-      '@vuepress/last-updated', // "上次更新"时间格式
+      "@vuepress/last-updated", // "上次更新"时间格式
       {
         transformer: (timestamp, lang) => {
-          return dayjs(timestamp).format('YYYY/MM/DD, HH:mm:ss')
+          return dayjs(timestamp).format("YYYY/MM/DD, HH:mm:ss");
         },
       },
     ],
-    'go-top', // 猫抓
-    'ribbon', // 背景缎带
-    'cursor-effects' // 鼠标点击效果
+    "go-top", // 猫抓
+    "ribbon", // 背景缎带
+    "cursor-effects", // 鼠标点击效果
+    "flexsearch-pro", // 全文搜索
+
     // [
     //   resolve(__dirname, './plugins/love-me'), { // 鼠标点击爱心特效
     //     color: '#11a8cd', // 爱心颜色，默认随机色
@@ -258,12 +250,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
   markdown: {
     lineNumbers: true,
-    extractHeaders: ['h2', 'h3', 'h4', 'h5', 'h6'], // 提取标题到侧边栏的级别，默认['h2', 'h3']
+    extractHeaders: ["h2", "h3", "h4", "h5", "h6"], // 提取标题到侧边栏的级别，默认['h2', 'h3']
   },
 
   // 监听文件变化并重新构建
-  extraWatchFiles: [
-    '.vuepress/config.ts',
-    '.vuepress/config/htmlModules.ts',
-  ]
-})
+  extraWatchFiles: [".vuepress/config.ts", ".vuepress/config/htmlModules.ts"],
+});
