@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Commitizen + Commitlint + husky 实践 | Dreamer</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="/img/favicon.ico">
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?9411ad90e999860bd29f69ea88f72c7a";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      </script>
+    <meta name="description" content="白日梦想家，最大的梦想就是当场退休！如果你也和我一样，不如一起逐梦？">
+    <meta name="keywords" content="dreamer,个人技术博客,技术文档,学习,lycpan233">
+    <meta name="theme-color" content="#11a8cd">
+    <meta name="baidu-site-verification" content="codeva-y1NOuDx2rY">
+    <meta name="msvalidate.01" content="355204FB706B56B152D9472961637DC6">
+    
+    <link rel="preload" href="/assets/css/0.styles.e97bb9b1.css" as="style"><link rel="preload" href="/assets/js/app.dd6c7a28.js" as="script"><link rel="preload" href="/assets/js/2.159c1e0f.js" as="script"><link rel="preload" href="/assets/js/31.b2281d68.js" as="script"><link rel="prefetch" href="/assets/js/10.64109d09.js"><link rel="prefetch" href="/assets/js/11.f0fc76aa.js"><link rel="prefetch" href="/assets/js/12.98beed6a.js"><link rel="prefetch" href="/assets/js/13.99cdb831.js"><link rel="prefetch" href="/assets/js/14.55b235c0.js"><link rel="prefetch" href="/assets/js/15.15153040.js"><link rel="prefetch" href="/assets/js/16.808287ac.js"><link rel="prefetch" href="/assets/js/17.5db4bb6b.js"><link rel="prefetch" href="/assets/js/18.e974a7f4.js"><link rel="prefetch" href="/assets/js/19.c2a18aca.js"><link rel="prefetch" href="/assets/js/20.c0916251.js"><link rel="prefetch" href="/assets/js/21.ebfb50e0.js"><link rel="prefetch" href="/assets/js/22.3f0f394b.js"><link rel="prefetch" href="/assets/js/23.6ff40850.js"><link rel="prefetch" href="/assets/js/24.d7d4ddc7.js"><link rel="prefetch" href="/assets/js/25.348860e3.js"><link rel="prefetch" href="/assets/js/26.86a24f83.js"><link rel="prefetch" href="/assets/js/27.5cabebb2.js"><link rel="prefetch" href="/assets/js/28.162c31de.js"><link rel="prefetch" href="/assets/js/29.d695c24f.js"><link rel="prefetch" href="/assets/js/3.646a901e.js"><link rel="prefetch" href="/assets/js/30.b291827c.js"><link rel="prefetch" href="/assets/js/32.346d43ff.js"><link rel="prefetch" href="/assets/js/33.0eda8437.js"><link rel="prefetch" href="/assets/js/34.fb58869d.js"><link rel="prefetch" href="/assets/js/35.525811ce.js"><link rel="prefetch" href="/assets/js/36.221f78b6.js"><link rel="prefetch" href="/assets/js/37.ba266517.js"><link rel="prefetch" href="/assets/js/38.2cabdcc0.js"><link rel="prefetch" href="/assets/js/39.07e71265.js"><link rel="prefetch" href="/assets/js/4.f5f70cde.js"><link rel="prefetch" href="/assets/js/40.a4da1227.js"><link rel="prefetch" href="/assets/js/41.51606e99.js"><link rel="prefetch" href="/assets/js/42.c46dcf13.js"><link rel="prefetch" href="/assets/js/43.42119419.js"><link rel="prefetch" href="/assets/js/5.c9b5cb41.js"><link rel="prefetch" href="/assets/js/6.fa436493.js"><link rel="prefetch" href="/assets/js/7.6a31650a.js"><link rel="prefetch" href="/assets/js/8.2ad7339f.js"><link rel="prefetch" href="/assets/js/9.9a3d314c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e97bb9b1.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/logo.jpeg" alt="Dreamer" class="logo"> <span class="site-name can-hide">Dreamer</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div> <a href="https://github.com/lycpan233/lycpan233.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="/img/avatar.jpeg"> <div class="blogger-info"><h3>lycpan233</h3> <span>白日梦想家</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div> <a href="https://github.com/lycpan233/lycpan233.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Mysql</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Node</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/5c732c/" class="sidebar-link">npm为什么父项目指定依赖版本后，可以影响到子项目的依赖</a></li><li><a href="/pages/4dc08f/" class="sidebar-link">MacOS pnmp多个项目同个包，为什么没有共享存储空间？</a></li><li><a href="/pages/30cb9b/" class="sidebar-link">pnpm 使用指南</a></li><li><a href="/pages/b781eb/" class="sidebar-link">pnpm 下载依赖更换源不生效</a></li><li><a href="/pages/abfb36/" aria-current="page" class="active sidebar-link">Commitizen + Commitlint + husky 实践</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level2"><a href="/pages/abfb36/#commitizen" class="sidebar-link">Commitizen</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/abfb36/#安装-commitizen-cli-工具包" class="sidebar-link">安装 Commitizen CLI 工具包</a></li><li class="sidebar-sub-header level3"><a href="/pages/abfb36/#在项目中初始化适配器" class="sidebar-link">在项目中初始化适配器</a></li><li class="sidebar-sub-header level3"><a href="/pages/abfb36/#搭配-husky-使用" class="sidebar-link">搭配 husky 使用</a></li><li class="sidebar-sub-header level3"><a href="/pages/abfb36/#使用方式与示例-commit" class="sidebar-link">使用方式与示例 commit</a></li><li class="sidebar-sub-header level3"><a href="/pages/abfb36/#可选-交互-ui-支持中文" class="sidebar-link">可选：交互 UI 支持中文</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/abfb36/#commitlint" class="sidebar-link">Commitlint</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/abfb36/#安装依赖包" class="sidebar-link">安装依赖包</a></li><li class="sidebar-sub-header level3"><a href="/pages/abfb36/#配置依赖" class="sidebar-link">配置依赖</a></li><li class="sidebar-sub-header level3"><a href="/pages/abfb36/#撘配-husky-使用" class="sidebar-link">撘配 husky 使用</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/abfb36/#相关文档" class="sidebar-link">相关文档</a></li></ul></li><li><a href="/pages/b7d295/" class="sidebar-link">package.json 中波浪号~ 异或号^ 是什么意思？</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Go</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-06225672><div class="articleInfo" data-v-06225672><ul class="breadcrumbs" data-v-06225672><li data-v-06225672><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-06225672></a></li> <li data-v-06225672><a href="/back-end/#后端" data-v-06225672>后端</a></li><li data-v-06225672><a href="/back-end/#Node" data-v-06225672>Node</a></li></ul> <div class="info" data-v-06225672><div title="作者" class="author iconfont icon-touxiang" data-v-06225672><a href="https://github.com/lycpan233" target="_blank" title="作者" class="beLink" data-v-06225672>lycpan233</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-06225672><a href="javascript:;" data-v-06225672>2024-01-23</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABGpJREFUSA3tVVtoXFUU3fvOI53UlmCaKIFmwEhsE7QK0ipFEdHEKpXaZGrp15SINsXUWvBDpBgQRKi0+KKoFeJHfZA+ED9KKoIU2gYD9UejTW4rVIzm0VSTziPzuNu1z507dibTTjL4U/DAzLn3nL3X2o91ziX6f9wMFdh6Jvbm9nNSV0msViVO6tN1Rm7NMu2OpeJ9lWBUTDxrJbYTS0hInuwciu9eLHlFxCLCZEk3MegsJmZ5K/JD6t7FkFdEvGUo1g7qJoG3MHImqRIn8/nzY1K9UPKKiJmtnUqHVE3Gbuay6vJE/N2FEmuxFjW2nUuE0yQXRRxLiTUAzs36zhZvOXJPdX850EVnnLZkB8prodQoM5JGj7Xk2mvC7JB8tG04Ef5PiXtG0UtxupRQSfTnBoCy554x18yJHI6I+G5Eru4LHmPJZEQsrvPUbMiA8G/WgMK7w7I+ez7++o2ANfbrjvaOl1tFMs+htG3IrZH9/hDX1Pr8Tc0UvH8tcX29KzAgIGcEkINyW5BF9x891hw6VYqgJHEk0huccS7vh3C6gTiODL+26huuBtbct8eZnqLML8PkxGYpuPZBqtqwkSjgc4mB5gbgig5i+y0UDK35LMxXisn9xQtK+nd26gTIHsHe/oblK/b29fUmN/8Y+9jAQrnBp56m1LcDlDp9irKTExSKduXJVWSqdBMA08pEJnEIOB3FPPMybu/oeV8zFeYN3xx576Q6RH+VmplE4ncQV5v+5rzSoyOU7PuEAg8g803PwBJ0CExno/jcMbN8tONYeOmHiuUNryvm3fRUy4tMPVLdAGkUhNWuggGrJcXPv+ouCjz0MKUHz1J2/E8IC9nqTabcxgaBYM0hPhD5Y65FsbxRQKxCQrDjDctW7PUM3HuZunFyifSAqEfuzCp48Il24luWUWZoyJCaPR82jE0+kFA643wRFVni4RYSq3ohJO2pZ7B5dO4xkDWbEpossJPLSrPjYID8rS2UHTlvyNxqIGsg674XJJ7vnh5L7PNwC4hh2sjCI96mzszOTpxLF0T7l88Yz7lAuK6OnL8gXLOnTvpzSb22YG8W7us3jSebFHeeqnXRG1vt+MoUM84LQIBmMsCTAcOauTh0T0l0neQK7m2bLMt2mGxU3HYssS0J2cdv5wljlPsrIuZLAG/2DOZIXgCYT8uMGZN+e2kSirfxZOPCsC0f24nTZzspnVn9VePS1Z5vubmAGGXG8ZFno9Hel0yfA5ZPhF7Dh972BQJ2qCpgH67lmWtBYbvk6sz02wjky2vXyz0XErP/kFB619js1BtwfOV4OPRqOQBjy3Qbk18vigUPPSD5ceHnwck7W9bhAqZdd7SuG7w4/P2F/GaJh8c7e9qgow+Q7cGBo+98WsLkuktFqiZabtXuQTu/Y5ETbR0v7tNSFnvrmu6pjdoan2KjMu8q/Hmj1EfCO2ZGfEIbIXKUlw8qaX9/b2oeSJmFksSeT/Fn0V3nSypChh4Gjh74ybO9aeZ/AN2dwciu2/MhAAAAAElFTkSuQmCC">Commitizen + Commitlint + husky 实践<!----></h1> <!----> <div class="theme-vdoing-content content__default"><h2 id="commitizen"><a href="#commitizen" class="header-anchor">#</a> Commitizen</h2> <h3 id="安装-commitizen-cli-工具包"><a href="#安装-commitizen-cli-工具包" class="header-anchor">#</a> 安装 Commitizen CLI 工具包</h3> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token comment">#npm</span>
+<span class="token function">npm</span> <span class="token function">install</span> commitizen <span class="token parameter variable">-g</span>
+
+<span class="token comment">#pnpm</span>
+<span class="token function">pnpm</span> <span class="token function">add</span> commitizen <span class="token parameter variable">-g</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>注：在使用 pnpm 安装的时候，若拋错 ERR_PNPM_NO_GLOBAL_BIN_DIR  Unable to find the global bin directory</p> <h3 id="在项目中初始化适配器"><a href="#在项目中初始化适配器" class="header-anchor">#</a> 在项目中初始化适配器</h3> <p>这里选择的是 cz-conventional-changelog ，官方还提供了其它的，可以尝试一下差异</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token comment"># npm</span>
+commitizen init cz-conventional-changelog --save-dev --save-exact
+
+<span class="token comment"># yarn</span>
+commitizen init cz-conventional-changelog <span class="token parameter variable">--yarn</span> <span class="token parameter variable">--dev</span> <span class="token parameter variable">--exact</span>
+
+<span class="token comment"># pnpm</span>
+commitizen init cz-conventional-changelog <span class="token parameter variable">--pnpm</span> --save-dev --save-exact
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h3 id="搭配-husky-使用"><a href="#搭配-husky-使用" class="header-anchor">#</a> 搭配 husky 使用</h3> <p>添加 prepare-commit-msg 钩子</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>npx husky <span class="token function">add</span> .husky/prepare-commit-msg  <span class="token string">'exec &lt; /dev/tty &amp;&amp; git cz --hook || true'</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>注：原版 exec &lt; /dev/tty &amp;&amp; git cz --hook || true 中的 git cz是npx cz 这里我进行了替换，如果拋错，可以改为 npx cz 或者 cz</p> <h3 id="使用方式与示例-commit"><a href="#使用方式与示例-commit" class="header-anchor">#</a> 使用方式与示例 commit</h3> <p>当时用 git commit 时触发 hook 进入交互页面，选择变更类型，补充变更内容。</p> <h3 id="可选-交互-ui-支持中文"><a href="#可选-交互-ui-支持中文" class="header-anchor">#</a> 可选：交互 UI 支持中文</h3> <ol><li>安装适配器</li></ol> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token comment"># npm</span>
+commitizen init cz-customizable --save-dev --save-exact
+
+<span class="token comment"># yarn</span>
+commitizen init cz-customizable <span class="token parameter variable">--yarn</span> <span class="token parameter variable">--dev</span> <span class="token parameter variable">--exact</span>
+
+<span class="token comment"># pnpm</span>
+commitizen init cz-customizable <span class="token parameter variable">--pnpm</span> --save-dev --save-exact
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>注： 如果已经按照上面的命令装过 cz-conventional-changelog ，需要加 --force 参数，或者把 cz-conventional-changelog 从项目里删除</p> <ol start="2"><li>配置 config</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code># package.json
+
+&quot;config&quot;: {
+    &quot;commitizen&quot;: {
+      &quot;path&quot;: &quot;./node_modules/cz-customizable&quot;
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><ol start="3"><li>重新定义交互信息</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>// .cz-config.js
+
+module.exports = {
+    // type 类型
+    types: [
+        { value: 'feat', name: 'feat:     引入新功能' },
+        { value: 'fix', name: 'fix:      修复 bug' },
+        { value: 'style', name: 'style:    更新 UI 样式文按键' },
+        { value: 'format', name: 'format:   格式化代码' },
+        { value: 'docs', name: 'docs:     添加/更新文档' },
+        { value: 'perf', name: 'perf:     提高性能/优化' },
+        { value: 'init', name: 'init:     初次提交/初始化项目' },
+        { value: 'test', name: 'test:     增加测试代码' },
+        { value: 'refactor', name: 'refactor: 改进代码结构/代码格式' },
+        { value: 'patch', name: 'patch:    添加重要补丁' },
+        { value: 'file', name: 'file:     添加新文件' },
+        { value: 'publish', name: 'publish:  发布新版本' },
+        { value: 'tag', name: 'tag:      发布新版本' },
+        { value: 'config', name: 'config:   修改配置文件' },
+        { value: 'git', name: 'git:      添加或修改.gitignore 文件' }
+    ],
+
+    // allowTicketNumber: false,
+    // isTicketNumberRequired: false,git
+    // ticketNumberPrefix: 'TICKET-',
+    // ticketNumberRegExp: '\\d{1,5}',
+
+    // 可以设置 scope 的类型跟 type 的类型匹配项，例如: 'fix'
+    // scopeOverrides: {
+    //   config: [
+    //     { name: 'merge' },
+    //     { name: 'style' },
+    //     { name: 'e2eTest' },
+    //     { name: 'unitTest' }
+    //   ]
+    // },
+    // 覆写提示的信息
+    messages: {
+        type: &quot;选择你要提交的类型:&quot;,
+        // scope: '\n选择一个 scope (可选):',
+        // 选择 scope: custom 时会出下面的提示
+        // customScope: '请输入自定义的 scope (可选):',
+        subject: '填写一个简短精炼的描述语句 (必填):\n',
+        body: '添加一个更加详细的描述，可以附上新增功能的描述或 bug 链接、截图链接 (可选)。使用 &quot;|&quot; 换行:\n',
+        breaking: '列举非兼容性重大的变更 (可选):\n',
+        footer: '列举出所有变更的 ISSUES CLOSED (可选)。 例如.: #31, #34:\n',
+        confirmCommit: '确认提交?（y/n）',
+    },
+
+    // 是否允许自定义填写 scope ，设置为 true ，会自动添加两个 scope 类型 [{ name: 'empty', value: false },{ name: 'custom', value: 'custom' }]
+    allowCustomScopes: false,
+    allowBreakingChanges: ['feat', 'fix'],
+    // 跳过问题
+    // skipQuestions: ['body', 'footer'],
+
+    // subject 限制长度
+    subjectLimit: 100,
+    // breaklineChar: '|', // 支持 body 和 footer
+    // footerPrefix : 'ISSUES CLOSED:'
+    // askForBreakingChangeFirst : true,
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br></div></div><p>注：该文件支持放在其它地方，但是需要重命名。配置依赖。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// package.json
+
+&quot;config&quot;: {
+    &quot;commitizen&quot;: {
+      &quot;path&quot;: &quot;./node_modules/cz-customizable&quot;
+    },
+    &quot;cz-customizable&quot;: {
+      &quot;config&quot;: &quot;.husky/git/commitizen.js&quot; // 新路径
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><ol start="4"><li>参考文档与项目</li></ol> <p><a href="https://github.com/leoforfree/cz-customizable" target="_blank" rel="noopener noreferrer">leoforfree/cz-customizable<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://github.com/LeadrateMSK/nuxt3-starter/blob/master/package.json" target="_blank" rel="noopener noreferrer">LeadrateMSK/nuxt3-starter<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="commitlint"><a href="#commitlint" class="header-anchor">#</a> Commitlint</h2> <h3 id="安装依赖包"><a href="#安装依赖包" class="header-anchor">#</a> 安装依赖包</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code># 安装 commitlint cli and conventional config
+npm install --save-dev @commitlint/{config-conventional,cli}
+
+# pnpm
+pnpm install --save-dev @commitlint/{config-conventional,cli}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="配置依赖"><a href="#配置依赖" class="header-anchor">#</a> 配置依赖</h3> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token comment"># 添加 commitlint 配置</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;'use strict'; module.exports = { extends: [ '@commitlint/config-conventional' ] };&quot;</span> <span class="token operator">&gt;</span> commitlint.config.js
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>注: 若 eslint 报错，可以添加 'use strict'; 另外其支持单独配置。使用方法可以参照该项目。
+<a href="https://github.com/LeadrateMSK/nuxt3-starter/blob/6c4d59a711030db7ead0c27002d8960557f2779e/.husky/git/commitlint.js#L4" target="_blank" rel="noopener noreferrer">LeadrateMSK/nuxt3-starter<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h3 id="撘配-husky-使用"><a href="#撘配-husky-使用" class="header-anchor">#</a> 撘配 husky 使用</h3> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>npx husky <span class="token function">add</span> .husky/commit-msg  <span class="token string">'npx --no -- commitlint --edit ${1}'</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="相关文档"><a href="#相关文档" class="header-anchor">#</a> 相关文档</h2> <p><a href="https://www.conventionalcommits.org/zh-hans/v1.0.0/" target="_blank" rel="noopener noreferrer">约定式提交 (conventionalcommits.org)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://ruanyifeng.com/blog/2016/01/commit_message_change_log.html" target="_blank" rel="noopener noreferrer">Commit message 和 Change log 编写指南 - 阮一峰的网络日志 (ruanyifeng.com)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="https://github.com/eggjs/egg/blob/master/CONTRIBUTING.zh-CN.md" target="_blank" rel="noopener noreferrer">egg/CONTRIBUTING.zh-CN.md at master · eggjs/egg (github.com)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div></div> <!----> <div class="page-edit"><div class="edit-link"><a href="https://github.com/lycpan233/lycpan233.github.io/edit/master/docs/03.后端/01.Node/04.Commitizen + Commitlint + husky 实践.md" target="_blank" rel="noopener noreferrer">编辑</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2024/01/23, 17:20:27</span></div></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/b781eb/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">pnpm 下载依赖更换源不生效</div></a> <a href="/pages/b7d295/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">package.json 中波浪号~ 异或号^ 是什么意思？</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/b781eb/" class="prev">pnpm 下载依赖更换源不生效</a></span> <span class="next"><a href="/pages/b7d295/">package.json 中波浪号~ 异或号^ 是什么意思？</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/b7d295/"><div>
+            package.json 中波浪号~ 异或号^ 是什么意思？
+            <!----></div></a> <span class="date">08-03</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/2014da/"><div>
+            Mysql 查询每个班级的前几名
+            <!----></div></a> <span class="date">07-20</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/11bc6c/"><div>
+            JavaScript位运算应用场景
+            <!----></div></a> <span class="date">06-13</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:lycpan@foxmail.com" title="漂流瓶联系" target="_blank" class="iconfont icon-youjian"></a><a href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=455025655" title="滴滴我" target="_blank" class="iconfont icon-QQ"></a><a href="https://github.com/lycpan233" title="GitHub" target="_blank" class="iconfont icon-github"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2023-2024
+    <span>Dreamer | <a href="https://github.com/xugaoyi/vuepress-theme-vdoing/blob/master/LICENSE" target="_blank">MIT License</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"><div></div><div id="goTop" class="hide-cat" data-v-bf92849a></div><canvas id="vuepress-canvas-ribbon"></canvas><canvas id="vuepress-canvas-cursor"></canvas></div></div>
+    <script src="/assets/js/app.dd6c7a28.js" defer></script><script src="/assets/js/2.159c1e0f.js" defer></script><script src="/assets/js/31.b2281d68.js" defer></script>
+  </body>
+</html>
