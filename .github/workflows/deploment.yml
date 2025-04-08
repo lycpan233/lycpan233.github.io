@@ -1,0 +1,36 @@
+name: Node.js
+on: 
+  push:
+    branches:
+      - master
+      - 'ci-**'
+jobs:
+  deployment_job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set Node && Pnpm
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.14.0"
+
+      - name: Install Dependencies && tar Project
+        run: |
+          npm install -g pnpm 
+          pnpm install -P
+          pnpm build
+          tar -zcvf ../blogs.tgz ./docs/.vuepress/dist
+
+      - name: SSH
+        uses: lycpan233/ssh-deploy-nodejs@v1
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          privateKey: ${{ secrets.SSH_PEM }}
+          source: "../blogs.tgz"
+          destination: "/root/blogs.tgz"
+          workdir: "/root"
+          scripts: |
+            rm -rf ./blogs && mkdir ./blogs
+            tar -zxvf blogs.tgz -C /root/blogs && rm -rf blogs.tgz
