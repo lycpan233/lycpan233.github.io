@@ -19,7 +19,7 @@ jobs:
         run: |
           npm install -P
           npm run build
-          tar -zcvf ../blogs.tgz ./docs/.vuepress/dist
+          tar -zcvf ./blogs.tgz -C ./docs/.vuepress dist
 
       - name: SSH
         uses: lycpan233/ssh-deploy-nodejs@v1
@@ -27,7 +27,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           privateKey: ${{ secrets.SSH_PEM }}
-          source: "../blogs.tgz"
+          source: "./blogs.tgz"
           destination: "/root/blogs.tgz"
           workdir: "/root"
           scripts: |
