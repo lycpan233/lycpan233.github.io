@@ -10,16 +10,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set Node && Pnpm
+      - name: Set Node
         uses: actions/setup-node@v4
         with:
           node-version: "20.14.0"
 
       - name: Install Dependencies && tar Project
         run: |
-          npm install -g pnpm 
-          pnpm install -P
-          pnpm build
+          npm install -P
+          npm build
           tar -zcvf ../blogs.tgz ./docs/.vuepress/dist
 
       - name: SSH
