@@ -18,7 +18,7 @@ jobs:
       - name: Install Dependencies && tar Project
         run: |
           npm install -P
-          npm build
+          npm run build
           tar -zcvf ../blogs.tgz ./docs/.vuepress/dist
 
       - name: SSH
