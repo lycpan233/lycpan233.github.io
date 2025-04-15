@@ -93,7 +93,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-      avatar: "/img/avatar.jpeg",
+      avatar: "/img/avatar.jpg",
       name: "lycpan233",
       slogan: "白日梦想家",
     },
